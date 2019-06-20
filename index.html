@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>un juego 3d para todo el mundo</title>
+  <meta name="google-site-verification" content="RKlUFfsGDLLKVqBs9v9n_QxE0_-FdduRVGBT7qKDofg" />
+  <meta name="generator" content="Google Web Designer 5.0.3.0130">
+  
+  <link rel="shortcut icon" href="favicon_N-D.ico" />
+  <link href="gwdiframe_style.css" rel="stylesheet" data-version="5" data-exports-type="gwd-iframe">
+  
+  <style type="text/css" id="gwd-text-style">  
+  p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+      html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+	  overflow: hidden; /*no estaba y salio al trasladar y usar game main,storage, controles touch como jump, attac, etc en este body en lugar del de atlantida*/
+	  
+    }
+	
+	
+    body {
+      background-color: transparent;
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="index.min.css">
+  <link rel="stylesheet" type="text/css" href="controls_custom.min.css">
+  <link rel="stylesheet" type="text/css" href="css/controls_touch.min.css">
+  <link rel="stylesheet" type="text/css" href="css/controls_touch1.min.css">
+  <link rel="stylesheet" type="text/css" href="css/controls_touch2.min.css">
+  <link rel="stylesheet" type="text/css" href="css/controls_touch3.min.css">
+  <link rel="stylesheet" type="text/css" href="bar_stats.min.css">
+  <link rel="stylesheet" type="text/css" href="css/game_main.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/credits_authors.css">-->
+  
+  
+  <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
+  <script data-source="gwd_webcomponents_min.js" data-version="6" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
+  <script data-source="gwdiframe_min.js" data-version="5" data-exports-type="gwd-iframe" src="gwdiframe_min.js"></script>
+    
+	
+	<!--<script src="v3d.js"></script>-->
+    
+</head>
+
+<body lang="en" class="htmlNoPages" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+
+  <div class="main-div gwd-gen-mq9zgwdanimation" id="Main_Div">
+    <!--<gwd-iframe id="HTML_Embed" source="atlantida.html" class="html-embed"></gwd-iframe>-->
+	 <div id="HTML_Embed" class="html-embed w-embed w-iframe"><iframe src="atlantida.html" allowFullScreen="true" sandbox="allow-pointer-lock allow-same-origin allow-forms allow-scripts" width="100%" height="100%" frameborder="0"></iframe></div>
+	<!--<iframe id="HTML_Embed" source="atlantida.html" sandbox="allow-pointer-lock allow-popups allow-popups-to-escape-sandbox" class="html-embed"></iframe>
+	A diferencia de webflow si crea alli los tag <iframe originales sin modificarlos tan drasticametne como para no admitir el ej sanbox adicion para  cuando quiera cambiar si deseo qeu abra paginas web en su interior ej al finalizar partida o salir del juego
+	-->
+  </div>
+  <div id="fullscreen_button" class="fullscreen-open" title="Toggle fullscreen mode"></div>
+  
+   <div class="locker" id="Locker"><!--estuvo en index.html antes que aqui pero depurar en editor puzzle requiere este traslado o parent.elements en javascript petan sin semejante tratamiento que dan en .js visual_logig virge3d-->
+    <div class="title">
+	  <div id ="Startout_Button"> 
+		<span lang="es">Cargar juego</span>
+		<span lang="en">Load Game</span>      
+	  </div>
+      <img src="interface/title_bg_transp.png"  draggable="false" class="title-image">
+<  </div>
+  </div>  
+  
+  <div class="run-tool" id="Run_Tool"><!--estuvo en index.html antes que aqui pero depurar en editor puzzle requiere este traslado o parent.elements en javascript petan sin semejante tratamiento que dan en .js visual_logig virge3d-->
+    <div class="title">
+	  <div id ="Run_Button"> 
+		<span lang="es">Comenzar juego</span>
+		<span lang="en">Start Out</span>      
+	  </div>
+      <img src="interface/title_bg_transp.png"  draggable="false" class="title-image">
+<  </div>
+  </div>  
+  <!--diria que no lo usamos aun el help y servia en su origen para mostrar estadisticas de resultados con tabla de celdas o ayuda info
+  <div id="help_picks_obj">
+  <h1 class="help-header">Fruits</h1><img src="images/apple_icon.png" class="help-image"><img src="images/pear_icon.png" class="help-image"><img src="images/cherry_icon.png" class="help-image"><img src="images/strawberry_icon.png" class="help-image"></div>-->
+  
+  
+  <div id="select_avatars">
+  <div id ="select_hunter_btn"></div>			
+  <div id ="select_amazon_btn"></div>				
+  </div>  
+  
+   <div id="Top_Left_Bar" class="top-left-bar w-clearfix">
+      <div class="fruit-tab w-clearfix"><img src="images/a_barrel_toxic.png" class="fruit-image">
+        <div id="Apple_Count" class="text-block">00</div>
+      </div>
+      <div class="fruit-tab w-clearfix"><img src="images/p_barrel_explosion.png" class="fruit-image">
+        <div id="Pear_Count" class="text-block">00</div>
+      </div>
+      <div class="fruit-tab w-clearfix"><img src="images/c_monedas.png" class="fruit-image">
+        <div id="Cherry_Count" class="text-block">00</div>
+      </div>
+      <div class="fruit-tab w-clearfix"><img src="images/s_maletin_life.png" class="fruit-image">
+        <div id="Strawberry_Count" class="text-block">00</div>
+      </div>
+	  
+      <div class="scores-tab w-clearfix">
+        <div class="scores-titol"><h1>Scores:
+			<div id="Score" class="scores-text"><h1>0</h1></div></h1>
+       </div>
+	  </div>
+      <div class="time-tab w-clearfix">
+        <div class="time-titol"><h1>Time:
+			<div id="Time" class="time-text"><h1>0</h1></div></h1> 
+		</div>	
+      </div>
+    </div>
+	
+	<!--es un dialogo asi que debia adaptarse a a atlantida.html junto al resto y dialogo restart para ser operativo
+      <div id="Final_Scores_Bar" class="scores">
+       <div class="tiltle"><img src="interface/title_bg_transp.png" class="title-image">
+        <div class="div-block-6 w-clearfix">
+		<h1 class="text-block final-score">Scores:</h1>
+        <h1 id="Final_Scores" class="text-block scores-text-block">0000</h1>
+          
+        </div>
+		<a href="#" id="startagain_button" class="start-again-button w-button">Try Again</a>
+	   </div>
+      </div>	
+	
+	-->
+	<div id ="Life_Bar" style="visibility: hidden; opacity: 0;" >
+        <div id ="Life_Bar_Main"></div>
+        <div id ="Life_Bar_Green"></div>
+        <div id ="Life_Bar_Red"></div>
+        <div id ="Life_Bar_Mid"></div>
+    </div>
+	
+ 	
+  <div class="buttons" id="Buttons">
+    <img src="images/button_giro_right.png"  draggable="false" style="cursor:pointer;" id="Button_Giro_Right" class="button-giro_right">
+    <img src="images/button_giro_left.png"  draggable="false" style="cursor:pointer;" id="Button_Giro_Left" class="button-giro_left">
+  </div>
+  <div class="buttons1" id="Buttons1">
+    <img src="images/button_right.png"  draggable="false" style="cursor:pointer;" id="Button_Right" class="button-right">
+    <img src="images/button_left.png"  draggable="false" style="cursor:pointer;" id="Button_Left" class="button-left">
+  </div>
+  <div class="buttons2" id="Buttons2">
+    <img src="images/button_up.png"  draggable="false" style="cursor:pointer;" id="Button_Front" class="button-front">
+    <img src="images/button_down.png"  draggable="false" style="cursor:pointer;" id="Button_Back" class="button-back">
+  </div>
+  
+ 
+   
+  
+<!--    <img src="interface/restore_view.png"  draggable="false" style="cursor:pointer;" id="Button_View" class="button-view">  	  
+	<img src="interface/restore_view.png"  draggable="false" style="cursor:pointer;" id="Reset_Char" class="reset-char">   ocupa posicion del control_view_restore--> 
+	
+  <div id="Controls">	 <!--antes fue buttons3 pero no llego a tener en contros_custom.css nada configurado asi que renombro y configuro en controls_touch2.css-->
+	<!--controls_touchs 2-->
+	<div class="controls-touch" id="Controls_Touch">  <img src="interface/deploy_others1.png"  draggable="false" style="cursor:pointer;"></div>
+		
+	<div id ="Control_Jump"></div> <!--porque la conservamos aqui en atlantida.html y no portamos como otras al index.html pues porque sino alli buttons3 no lo renocnoera el controsl_touch.js  pues lo vuelvo a llevar aqui a index.html. A ver que tal porque al pincharlo solo en pc bloquea o sale bug de bloque key-->
+	
+	<div id ="Control_Attack"></div>
+<!--	<div id ="control_out_vehicle"></div>-->
+
+	<div id ="Control_Out_Vehicle"></div>
+		
+				<!--Aqui estaba salir de coche y restore view que los pruebo en index.html, ,,,Antes puse esto sustituye al control_view_restore , pero el nuevo id s usa en puzzle 
+									usa la de index.html porque con esta pagina hay bug en puzzle y no va--->
+	
+	
+	 <div class="controls-touch1" id="Controls_Touch1">  <img src="interface/deploy_tools.png"  draggable="false" style="cursor:pointer;"></div>		
+	
+		<div id ="Reset_Char"></div><!--orientacion-->
+		<div id ="Restart_Pos_Char"></div><!--punto de origen de la partida-->
+		
+		
+	 <div class="controls-touch2" id="Controls_Touch2">  <img src="interface/deploy_views.png"  draggable="false" style="cursor:pointer;"></div>
+		
+		<div id="Control_View_Orbit"> <img src="interface/orbit_view.png"  draggable="false" style="cursor:pointer;"> </div>
+		<div id ="Control_View_TPS"></div>
+		<div id ="Control_View_FPS"></div>
+		
+    
+	
+  
+	<div class="controls-touch3" id="Controls_Touch3">  <img src="interface/deploy_others2.png"  draggable="false" style="cursor:pointer;"></div>								
+	<div id ="Control_Main_Menu"></div><!--es el que actualmente tras ser extra-optiosn icon ha pasado a ser quien llame a los aliens o trex-->
+	<div id ="Control_Fly">
+		<div id ="Control_Fly-up"></div>
+		<div id ="Control_Fly-down"></div>
+	</div> 	
+
+  
+  </div>	
+
+
+
+
+
+  <div class="progress-bar" id="Progress_Bar">
+  <!--  <div class="div-block-9" id="Div_Block_9">
+      <div class="div-block-11" id="Div_Block_11">-->
+        <div class="green-apple gwd-gen-b3zhgwdanimation" id="Green_Apple">
+          <div class="red-apple gwd-gen-1hffgwdanimation" id="Red_Apple"></div>
+		   <div class="loader-text" id="Loading_Percentage">0%</div>
+ <!--       </div>	seria el 11 block sino me liee ya ver version previa-->
+       </div> 
+	
+  <!-- seria creo el block 9</div>-->
+  </div>
+ <div id="preloader_a_cont"><!--para cargas de niveles o escenas adicionales a la principal-->
+        <div id="prelod_a_static_path">
+            <div id="prelod_a_dynamic_path"></div>
+            <span>0%</span>  <!--recordemos que es decorativo y con javascript reemplazaos su innerHTML-->
+        </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <div id="Game_Menu_Calling" style="visibility: hidden; opacity: 0; z-index: 0;"></div>
+    <div id="Canvas_Shadow"></div>
+	
+    <div id ="Game_Menu" class="centered_xy" style="visibility: hidden; opacity: 0; z-index: 0;">
+        <div id ="Menu_Resume">
+            <span class="es">CONTINUAR</span>
+            <span class="en">RESUME</span>
+        </div>
+        <div id ="Menu_Help">
+            <span class="es">AYUDA</span>
+            <span class="en">HELP</span>
+        </div>
+        <div id ="Menu_Credits">
+            <span class="es">CREDITOS</span>
+            <span class="en">CREDITS</span>
+        </div>
+        <div id ="Menu_Restart">
+<			<span class="es">REINICIO</span>            
+            <span class="en">RESTART</span>
+        </div>
+		<div id ="Menu_Character"><!--provisionalment esta ocultando y mostrando en combinacion con menu_cheats los controles iniciales que use de mov-->
+            <span class="es">SELECCIONA PERSONAJE</span>
+            <span class="en">SELECT CHARACTER</span>
+
+        </div>
+        <div id ="Menu_Cheats(trucos)">
+            <span class="es devel">MENU CHEATS(TRUCOS)</span>
+            <span class="en devel">CHEATS MENU</span>
+        </div>
+		<div id ="Game_Exit">
+            <span class="es">SALIR JUEGO</span>
+            <span class="en">GAME EXIT</span>
+        </div>
+    </div>
+	
+ 
+ <div id ="Game_Exit_Dialeg" class="centered_xy">
+	<div id ="Game_Exit_Dialeg_Sub">
+		<span lang="es">SALIR JUEGO</span>
+		<span lang="en">GAME EXIT</span>
+	 </div>
+	 <div id ="Save_Game">
+		<span lang="es">GUARDAR PARTIDA</span>
+		<span lang="en">SAVE GAME</span>
+	 </div>
+ </div>
+ 
+ <div id ="Game_Restart_Dialeg" class="centered_xy">
+ <img src="interface/title_bg_transp.png" class="title-img-final centered_xy_img">
+	<h1 style="float: left;">Scores:</h1>
+	<h1 id="Final_Scores">0000</h1>
+	<div id="Game_Restart_Dialeg_Sub">			
+		<span lang="en">Try again</span>
+		<span lang="es">Intentalo de nuevo</span>		 
+	</div>  
+	<div id ="Next_Level_Dialeg_Sub">
+		<span lang="es">SIGUIENTE NIVEL</span>
+		<span lang="en">NEXT LEVEL </span>
+	 </div>
+	<div id ="Comming_Soon">	 
+		<span lang="es"><a href="https://www.n-dimensiones.es/main/blog">Sigue cualquier nueva noticia en las redes sociales para mas niveles</a></span>
+		<span lang="en"><a href="https://www.n-dimensiones.es/main/blog">Follow any new news in social networks for more levels</a></span>
+	 </div>
+	
+	 
+	 
+		
+ </div>
+ 	
+    <div id ="Credits_Panel">   <!--es el fondo de la portada con  el link con la  imagen a la lista  de autores-->
+        <div id="authors"><!--es  el link con la  imagen a la lista  de autores-->
+            <div id="authors_click_area"></div>
+        </div>
+<!--        Ya esta en authors_list_exit  repetido lo que no quiere 
+decir que algun dia lo necesitemos ej al animar como en b4w
+		<div id="credits_exit" class="game_menu_buttons">
+		<span lang="es">REGRESAR</span>
+		<span lang="en">BACK</span>		
+		</div>-->
+        <div id="copyrights"></div>
+    </div>
+	
+	
+    <div id="Authors_List" class="p_n_dimensiones_credits">
+		<div class="list es">
+            <span lang="es">Creditos:</span>
+			<p></p>
+            <span lang="es" class="develop_kind">3D-Graphics y Texturizando</span>
+            <span lang="es">Florencio Valladolid</span>
+			<p></p>
+            <span lang="es" class="develop_kind">Programando</span>
+            <span lang="es">Florencio Valladolid</span>
+            <p></p>
+            <span lang="es" class="develop_kind">Animacion</span>
+            <span lang="es">Florencio Valladolid</span> 
+            <p></p>
+            <span lang="es" class="develop_kind">Concepto  Disenyo</span>
+            <span lang="es">Florencio Valladolid</span>
+           	
+           
+        </div>
+        <div class="list en">
+            <span lang="en">Credits:</span>
+			<p></p>
+            <span lang="en" class="develop_kind">3D-Graphics and Texturing</span>
+            <span lang="en">Florencio Valladolid</span>  
+			<p></p>
+            <span lang="en" class="develop_kind">Programming</span>
+            <span lang="en">Florencio Valladolid</span>
+            <p></p>
+            <span lang="en" class="develop_kind">Animation</span>
+            <span lang="en">Florencio Valladolid</span>           
+            <p></p>
+            <span lang="en" class="develop_kind">Concept Design</span>
+            <span lang="en">Florencio Valladolid</span>	
+			
+        
+        </div>  
+        <div id="Authors_List_Exit" class="game_menu_buttons">
+		<span lang="es">REGRESAR</span>
+		<span lang="en">BACK</span>
+		</div>
+    </div>
+
+ 	
+	<div id ="Help_Panel" class="additional_panel" mobile="0">
+		<div >
+			<img src="interface/help_desk_en_p1.png"  draggable="false" id="Img_Panel"  class="img-panel en">
+<!--			<img src="interface/help_desk_es.png"  draggable="false" class="img-panel es">-->
+		</div>
+		<div id="Help_Descr"><!--en la pagina 5 describimos objetivos y segun nivel actual y con vistas a reorganizar para ser visto antes de la ficha 5-->
+			<span  class="help_descr es">
+			El objetivo del juego es pasar al siguiente nivel para lograrlo debes localizar y rebasar los obsequios para acumular un minimo, ejemplo 24 de 40 puntos pero tambien puedes restar sino prestas atencion a las amenazas, algunos obsequios tambien dan mas tiempo o lo restan
+			</span>
+			<span class="help_descr en">
+			The objective of the game is to go to the next level to achieve it you must locate and exceed the gifts to accumulate a minimum, example 24 of 40 points but you can also subtract but pay attention to the threats, some gifts also give more time or subtract
+			</span>  
+		 </div>
+        <div id="Help_Exit" class="restart_button"></div>
+		<div id="Help_Next" class="restart_button"></div>
+    </div>	
+</body>
+
+</html>

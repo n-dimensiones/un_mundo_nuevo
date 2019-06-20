@@ -1,0 +1,211 @@
+{
+    "asset" : {
+        "generator" : "Soft8Soft Verge3D for Blender add-on", 
+        "version" : "2.0"
+    }, 
+    "cameras" : [
+        {
+            "extensions" : {
+                "S8S_v3d_camera_data" : {
+                    "controls" : "NONE", 
+                    "enablePan" : true, 
+                    "moveSpeed" : 1.0, 
+                    "rotateSpeed" : 1.0, 
+                    "viewportFitInitialAspect" : 1.7777777616808443, 
+                    "viewportFitType" : "AUTO"
+                }
+            }, 
+            "name" : "Camera", 
+            "perspective" : {
+                "aspectRatio" : 1.7777777616808443, 
+                "yfov" : 0.5033799416096446, 
+                "zfar" : 100.0, 
+                "znear" : 0.10000000149011612
+            }, 
+            "type" : "perspective"
+        }
+    ], 
+    "extensions" : {
+        "S8S_v3d_data" : {
+            "lights" : [
+                {
+                    "color" : [
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "name" : "Ambient_Scene", 
+                    "profile" : "blender", 
+                    "type" : "ambient"
+                }
+            ]
+        }
+    }, 
+    "extensionsUsed" : [
+        "S8S_v3d_material_data", 
+        "S8S_v3d_camera_data", 
+        "S8S_v3d_data", 
+        "S8S_v3d_node_data", 
+        "S8S_v3d_scene_data"
+    ], 
+    "materials" : [
+        {
+            "extensions" : {
+                "S8S_v3d_material_data" : {
+                    "nodeGraph" : {
+                        "edges" : [
+                            {
+                                "fromNode" : 0, 
+                                "fromOutput" : 0, 
+                                "toInput" : 0, 
+                                "toNode" : 1
+                            }
+                        ], 
+                        "nodes" : [
+                            {
+                                "inputs" : [
+                                    [
+                                        0.05087608844041824, 
+                                        0.05087608844041824, 
+                                        0.05087608844041824, 
+                                        1.0
+                                    ], 
+                                    1.0
+                                ], 
+                                "is_active_output" : false, 
+                                "name" : "Background", 
+                                "outputs" : [
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ]
+                                ], 
+                                "type" : "BACKGROUND"
+                            }, 
+                            {
+                                "inputs" : [
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ], 
+                                    [
+                                        0, 
+                                        0, 
+                                        0, 
+                                        0
+                                    ]
+                                ], 
+                                "is_active_output" : true, 
+                                "name" : "World Output", 
+                                "outputs" : [], 
+                                "type" : "OUTPUT_WORLD"
+                            }
+                        ]
+                    }
+                }
+            }, 
+            "name" : "Verge3D_Environment_World"
+        }
+    ], 
+    "nodes" : [
+        {
+            "camera" : 0, 
+            "extensions" : {
+                "S8S_v3d_node_data" : {
+                    "frustumCulling" : true, 
+                    "hidden" : false, 
+                    "renderOrder" : 0
+                }
+            }, 
+            "name" : "Cam_down_ctrl2", 
+            "rotation" : [
+                -0.1034531518816948, 
+                0.7008092403411865, 
+                0.09514224529266357, 
+                0.6993653178215027
+            ], 
+            "scale" : [
+                0.9999999403953552, 
+                0.9999998807907104, 
+                0.9999998211860657
+            ], 
+            "translation" : [
+                0.0, 
+                0.30000001192092896, 
+                -0.10000000149011612
+            ]
+        }, 
+        {
+            "extensions" : {
+                "S8S_v3d_node_data" : {
+                    "frustumCulling" : true, 
+                    "hidden" : false, 
+                    "renderOrder" : 0
+                }
+            }, 
+            "name" : "pos_sound_emit", 
+            "translation" : [
+                0.0, 
+                3.0615620613098145, 
+                -1.8641128540039062
+            ]
+        }, 
+        {
+            "extensions" : {
+                "S8S_v3d_node_data" : {
+                    "frustumCulling" : true, 
+                    "hidden" : false, 
+                    "renderOrder" : 0
+                }
+            }, 
+            "name" : "tema_Casbah_Towers", 
+            "translation" : [
+                0.0, 
+                2.8258609771728516, 
+                -0.6897789239883423
+            ]
+        }, 
+        {
+            "extensions" : {
+                "S8S_v3d_node_data" : {
+                    "frustumCulling" : true, 
+                    "hidden" : false, 
+                    "renderOrder" : 0
+                }
+            }, 
+            "name" : "tema_ticker", 
+            "translation" : [
+                0.0, 
+                2.8258609771728516, 
+                -0.0
+            ]
+        }
+    ], 
+    "scene" : 0, 
+    "scenes" : [
+        {
+            "extensions" : {
+                "S8S_v3d_scene_data" : {
+                    "aaMethod" : "AUTO", 
+                    "light" : 0, 
+                    "physicallyCorrectLights" : true, 
+                    "worldMaterial" : 0
+                }
+            }, 
+            "extras" : {
+                "animFrameRate" : 24
+            }, 
+            "name" : "Scene", 
+            "nodes" : [
+                0, 
+                1, 
+                2, 
+                3
+            ]
+        }
+    ]
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- __V3D_PUZZLES__ - enable Puzzles button in the App Manager -->
+<!-- __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated -->
+<html lang="es">
+<head>
+  <title>Verge3D Web Interactive</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Search Engines -->
+  <meta name="description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Verge3D Web Interactive">
+  <meta name="twitter:description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta name="twitter:image:src" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Verge3D Web Interactive">
+  <meta property="og:description" content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta property="og:image" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <meta property="og:type" content="website">
+
+  <meta name="generator" content="Verge3D 2.11.0pre1">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+  <link rel="manifest" href="media/manifest.json">
+  <link rel="mask-icon" href="media/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- WebXR origin trial -->
+  <meta http-equiv="origin-trial" content="Aop1aS3O0LG/MKmDbfhMRdlXGxB1ETrJJScdLSaYLDCMJI5iOLQ0uwhBObewdZKbpu00Y+9f7YC5tALasZ7BOg0AAABoeyJvcmlnaW4iOiJodHRwczovL3NvZnQ4c29mdC5jb206NDQzIiwiZmVhdHVyZSI6IldlYlhSRGV2aWNlTTY5IiwiZXhwaXJ5IjoxNTUxODMwMzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
+  
+ <!-- <link href="css/joystick.css" rel="stylesheet">  
+  <link href="css/virtualInput.css" rel="stylesheet">-->
+  
+    <link rel="stylesheet" type="text/css" href="atlantida.min.css">  <!--  tiene  los botones container , fullscree, life y load y save  ... -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/controls_touch.css">   tiene  los botones attack, jumpo, salir cosche, restore char, fps y tps ... 
+	-->
+	<link rel="stylesheet" type="text/css" href="css/controls_touch_container.min.css"> 
+	<!--Aqui iva  el trasladdo a index.html   <link rel="stylesheet" type="text/css" href="css/game_main.css">
+  finalmente nos quedamos exclusivamente con los touch de control de movimiento solo-->
+   
+ 
+ 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--  <script src="js/virtualInput.js"></script>  -->
+  
+  
+    <script src="ammo.js"></script>
+<!--<script src="../../build/v3d_full.js"></script>
+<script src="js/v3d_full_origin.js"></script>
+<script src="../../build/v3d.js"></script>-->
+<script src="v3d.min.js"></script>
+
+
+
+<!--Ahora ya tiene un codigo incorporado a considerar para no ignorar y mantenerla descompress ej detect_mobile-->
+  
+   
+ <!--<script src="../../demo/js/controls/OrbitControls.js"></script>-->
+ 
+<!--    <script src="../../demo/js/WebGL.js"></script>-->
+ <!--<script src="../../demo/js/controls/PointerLockControls.js"></script>-->
+<!--<script src="js/PointerLockControls.js"></script>-->
+
+ <script src="main.min.js"></script>
+ 
+  
+
+ 
+  
+
+</head>
+
+<body lang="en">
+  <div id="Container">  <!--blocker   es este id sin duda en el ej de pointerlok pero este engloba dentro instructios id div asi que lo reubicamos-->
+  
+  <!--  <div id="Instructions">   Renombrada a pointerlock_elem , si quieres puedes reducir el 100x100 de ancho y alto para ver la escena sin que la oculte el fondo de instructions
+        <span style="font-size:40px">Click to play</span>
+        <br />
+        (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+    </div>-->
+	<!--aqui va aparecer un <canvas ocupando tada la ventana actual y en app 
+	prototype se observa que hay un addchild tal canvas tag al iniciar la app-->
+  </div>
+  
+ 
+ 
+  
+  <div id="Sound_Id" class="sound-class"></div><!--div solo para hacer click y desplegar f01-->
+  <div id="Help_Text" class="help-text"><p>
+	  <span lang="es">Haz click para mas opciones en la rueda. O click sobre algun circulo sobre los personajes segun con cual quieras iniciar la partida</span>
+	  <span lang="en">Click for more options on the wheel. Or click on a circle about the characters according to which you want to start the game </span></p>
+  </div>
+    
+<form id="F01_Change_Char_Menu" method="GET" action="" class="form-change-char">
+<h1>
+<span lang="es">Selecciona una opcion</span>
+<span lang="en">Select option</span></h1>
+
+
+<p> <input id="F01_Sound" type="checkbox" name="sound"  value="false">
+<span lang="en">positional music on/of</span>
+<span lang="es">musica posicional on/of</span></p>
+<p><input id="F01_Anims" type="checkbox" name="anims"  value="false">
+<span lang="en">animations characters on/of</span>
+<span lang="es">animaciones personajes on/of</span></p>
+<p><input id="F01-Text_Off-On" type="checkbox" name="hide_text"  value="false">
+<span lang="es">ocultar todas las ayudas on/of</span>
+<span lang="en">hide all helps on/off</span></p>
+<p><input id="F01_Idiome_ES/EN" type="checkbox" name="hide_text"  value="false">
+<span lang="es">Check on para idioma ES, off para EN</span>
+<span lang="en">On select  for language ES, off for EN</span></p>
+<p></p>
+<!--<p><input Type="submit" value=""></p>-->
+
+</form>
+
+<div id="Help_Text2" class="help-text2"><p>
+	  <span lang="es">Haz click para mas opciones en la rueda. O click sobre algun circulo sobre los personajes segun con cual quieras iniciar la partida</span>
+	  <span lang="en">Click for more options on the wheel. Or click on a circle about the characters according to which you want to start the game </span></p>
+  </div>
+
+<form id="F02_Cheats_Menu" method="GET" action="" class="form-cheats">
+<h1>
+<span lang="es">Selecciona una opcion</span>
+<span lang="en">Select option</span></h1>
+
+
+<p> <input id="F02_Sound" type="checkbox" name="sound"  value="false">
+<span lang="en">positional music on/of</span>
+<span lang="es">musica posicional on/of</span></p>
+<p><input id="F02_Anims" type="checkbox" name="anims"  value="false">
+<span lang="en">config unsave automatic on/of</span>
+<span lang="es">configuracion no guardar automaticamente on/of</span></p>
+<p><input id="F02-Text_Off-On" type="checkbox" name="hide_text"  value="false">
+<span lang="es">ocultar todas las ayudas on/of</span>
+<span lang="en">hide all helps on/off</span></p>
+<p><input id="F02_Idiome_ES/EN" type="checkbox" name="hide_text"  value="false">
+<span lang="es">Check on para idioma ES, off para EN</span>
+<span lang="en">On select  for language ES, off for EN</span></p>
+<p></p>
+<!--<p><input Type="submit" value=""></p>-->
+<div id="Menu_Cheats_Exit" class="restart_button"></div><!--desde game menu help_exit copia por ello lo incluimos en el formulario puesto que alli es hijo de help_panel-->
+</form>
+ 
+
+    
+  <audio loop id="music" preload="auto" style="display: none">
+    <!--<source src="assets/sound/376737_Skullbeatz___Bad_Cat_Maste.ogg" type="audio/ogg">-->
+    <source src="assets/sound/playlist/Ticker.mp3" type="audio/mpeg">
+  </audio>
+  
+  <!--<div id="fullscreen_button" class="fullscreen-open" title="Toggle fullscreen mode"></div> fue trasladada a index.html sino sus elmeentos en su contexto eran los unicos conservados o viceversa-->
+
+ <!-- <script src="js/joystick.js"></script>-->
+ <!--sin esta linea aqui en lugar de index.htmnl, no ira las runcode que llaman a su interior del atlantida.js apesar de traslar sus elementos html-->
+<!--    <script src="js/controls_touch.js"></script>-->
+<!--	<script src="js/controls_tps.js"></script> hasta saber de eventos touch changedtouches que pueda ser reemplazado por el mouse correspondiente
+este codigo para girar camera tps no me vale-->
+ <!--<script src="js/control_pointerlock.js"></script>-->
+ <!--<script src="js/sound_listener.js"></script>-->
+<!--<script src="js/storage.js"></script>	-->
+   
+	
+		
+  <div id ="Control_Load_Previ_Stat"></div><!--cuando los vuelvas a mover de index.html a atlantida.html recuerda el chceking en puzzle de parent-->
+  <div id ="Control_Save_Current_Stat"></div>	
+	
+<!--estaba aqui controls apartado y instruccions div-->
+   <div id ="Pointerlock_Elem_FPS"></div><!--realmente es pointerlock 
+  <div id ="Pointerlock_Elem_FPS"><img src="interface/move_mouse_fps.png"  draggable="false" style="cursor:pointer;"></div>  realmente es pointerlock activacion desde codec de javacscritp y solo deberia mostrarse en no mobiles
+                         lo saco del div controls para que no le afecte ocultarlos desde tal cuando aquellos si pueden mostrarse ej en mobiles-->
+   <div id ="Pointerlock_Elem_TPS"></div>
+   <!--
+    <div id ="Pointerlock_Elem_TPS_Right"></div>
+	 <div id ="Pointerlock_Elem_TPS_Left"></div>-->
+	
+  <div id="Controls_Mov_Touch"><!--son dinamicos aparecen sobre la marcha al usarse sobre el canvas Container, estan su estilo en controls_touch_container.css-->
+  <div id ="Control_Circle"></div>
+	<div id ="Control_Tap"></div><!-- es el centro vamos el mmismo que la derecha o imagen-->
+	<div id ="Control_Giro_Tap"></div><!-- espero sea el de la pantalla derecha, lo es confirmado-->
+  </div>	
+ 
+  	
+
+</body>
+
+</html>
