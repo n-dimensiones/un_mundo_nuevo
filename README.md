@@ -8,7 +8,7 @@ Its simplicity and fast implementation, clearly differentiates it for be ideal t
 Forecasts
 
 
-If you have support for crowfounding, you could guarantee the video tutorials, with a weekly exit, organize the existing modules, starting with an access to the scene, use your own mesh for the character and, little by little, in the rest of the tutorials you will interact with the scene and managing the gamepad, the keyboard and touch screen touch, collect objects, hit, shoot, take damage, save the state game, etc.etc A content that seeing the operational demo available online both on the web and Google Play, is already very complete for beginners. And the goal is to expand it with more effects thanks to particle systems, make more levels and improve current levels with all the current deficiencies that do not impede the functionality that all video game developers want. Remember to support the crowdfounding so that together we can achieve it.
+If I have your monthly support of at least 1€/1$  for crowfounding, you could guarantee the video tutorials, with a weekly exit, organize the existing modules, starting with an access to the scene, use your own mesh for the character and, little by little, in the rest of the tutorials you will interact with the scene and managing the gamepad, the keyboard and touch screen touch, collect objects, hit, shoot, take damage, save the state game, etc.etc A content that seeing the operational demo available online both on the web and Google Play, is already very complete for beginners. And the goal is to expand it with more effects thanks to particle systems, make more levels and improve current levels with all the current deficiencies that do not impede the functionality that all video game developers want. Remember to support the crowdfounding so that together we can achieve it.
 
 
 
@@ -32,12 +32,12 @@ Once downloaded the engine verge3d,
 https://www.soft8soft.com/get-verge3d/
 
  leave it in any unzipped folder, open blender add it in scripts the path to dir ../verge3d and check in the list of addons. Then in 3d view of the blender you will have the button to the manager that opens a URL in your browser to manage any project.
-http: // localhost: 8668 /
+http://localhost:8668/
 
-  That of a new world you leave in the dir applications as the rest of the app of existing examples there. It will appear ej
-http: // localhost: 8668 / applications / atlantida_tuto01_build / index.html
+That of a new world you leave in the dir applications as the rest of the app of existing examples there. It will appear ej
+http://localhost:8668/applications/un_mundo_nuevo/index.html
 and contine the binaries to the meshes and their images. The edition is a matter of each one that generates its own and makes available as I describe in the video tutorials.
-
+ 
 
 
 
@@ -46,14 +46,14 @@ and contine the binaries to the meshes and their images. The edition is a matter
 
 Crowdfounding campaign to continue developing:
 I support it so that there are next outputs: multiplayer, middle and high resolution https://patreon.com/ndimensiones from $ 1 or € 1
-
 https://github.com/n-dimensions
+
 
 version
  current: 001
 
-It is required to download free verge3d 2.13.pre1 to use in addon it in blender 2.79  or 3D max
-
+It is required to download free verge3d 2.13.pre1 to use in addon it in blender 2.79 or 2.8  or 3D max
+https://www.soft8soft.com/get-verge3d/
 
 Quick start
 Clone the repo, git clone https://github.com/n-dimensiones/un_mundo_nuevo.git
@@ -61,11 +61,11 @@ Clone the repo, git clone https://github.com/n-dimensiones/un_mundo_nuevo.git
 
 Copyright and license
 
-For use in production or commercial purchases the one corresponding to your need.
+For the use in production or commercial the corresponding license is required, do not hesitate to consult me for a discount or visit my website to access it.
 https://www.soft8soft.com/licensing/
 
 
-All image and audio files (including * .png, * .jpg, * .svg, * .mp3, * .wav and * .ogg) are licensed under the CC-BY-NC license. They are not provided because, crowdfounding support is needed to maintain the project and to be able to continue developing, expanding and achieving the objectives of making multiplayer and screen resolutions better, middle and high
+All image and audio files (including *.glTF, * .png, * .jpg, * .svg, * .mp3, * .wav and * .ogg) are licensed under the CC-BY-NC license. No more than the binaries are provided because this project needs voluntary support to be funded in the portal crowdfunding patreon and to know how to use your own meshes you have the videotutorials. Only with your support I will be able to maintain and continue developing, expanding what has already been achieved and the new goals and improvements that come out, better screen resolutions, multiplayer mode, VR, AVR, etc.
 
 current bugs_errors
-cada 15 dias tienes correcciones periodicas con descargar la ultima version
+every 15 days you have periodic corrections with download the latest version
