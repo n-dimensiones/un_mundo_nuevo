@@ -63,7 +63,7 @@ Copyright and license
 
 For the use in production or commercial the corresponding license is required, do not hesitate to consult me for a discount or visit my website to access it.
 https://www.soft8soft.com/licensing/
-
+Shortly you will see on the cover of the website, as here, the discount code that must be applied to enjoy a discount of 5% that I can provide thanks to the issuance of these verge3d videotutorials.
 
 All image and audio files (including *.glTF, * .png, * .jpg, * .svg, * .mp3, * .wav and * .ogg) are licensed under the CC-BY-NC license. No more than the binaries are provided because this project needs voluntary support to be funded in the portal crowdfunding patreon and to know how to use your own meshes you have the videotutorials. Only with your support I will be able to maintain and continue developing, expanding what has already been achieved and the new goals and improvements that come out, better screen resolutions, multiplayer mode, VR, AVR, etc.
 
