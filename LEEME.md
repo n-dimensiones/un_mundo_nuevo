@@ -62,7 +62,10 @@ Copyright and license
 
 Para el uso en produccion o comercial se requiere la licencia correspondiente, no dudes en consultarme algún descuento o visitar mi web para acceder al mismo.
 https://www.soft8soft.com/licensing/
-En breve contareis en la portada de la web, como aqui, del codigo de descuento que hay que aplicar para disfrutar de un descuento del 5% que os puedo proporcionar gracias a la emisión de estos videotutoriales de verge3d.
+
+En la portada de la web, 
+https://www.n-dimensiones.es
+como aqui hay disponible el siguiente codigo cupon "florencio.valladolid" para que aplicandolo disfrutéis de un descuento del 5% que os puedo proporcionar gracias a la emisión de estos videotutoriales de verge3d.
 
 Todas las imagenes y audio (incluyendo *.glTF, * .png, * .jpg, * .svg, * .mp3, * .wav and * .ogg) son licenciados bajo  CC-BY-NC license. 
 No se proporcionan mas que los binarios porque  este proyecto  necesita apoyo voluntario para financiarse en el portal crowdfunding patreon y para saber usar tus propias mallas tienes los videotutoriales. Sólo con tu apoyo podré  mantener y continuar desarrollando, expandiendo lo ya logrado  y los nuevos objetivos y mejoras que vayan saliendo, mejores resoluciones de pantalla, modo multijugador, VR , AVR , etc
