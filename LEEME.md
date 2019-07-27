@@ -13,7 +13,7 @@ Si tengo vuestro apoyo mensual minimo de 1€/1$ para el crowfounding, podría gara
 
 
 reel demo(video)
-   Puedes observar su potencial visualizando su demo reel  https://www.youtube.com/channel/UCpex5v3JE4hURg20z_vh1FA
+   Puedes observar su potencial visualizando su demo reel al canal https://www.youtube.com/channel/UCI0ioAEJOoKzinzH6HFRe9w
 
 Contacto
 @flokisun https://www.linkedin.com/in/florenciovalladolidrodriguez/

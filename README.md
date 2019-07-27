@@ -13,7 +13,7 @@ If I have your monthly support of at least 1€/1$  for crowfounding, you could gu
 
 
 reel demo
-   So that you can quickly see its potecial summary there is the demo reel  https://www.youtube.com/channel/UCpex5v3JE4hURg20z_vh1FA
+   So that you can quickly see its potecial summary there is the demo reel to channel https://www.youtube.com/channel/UCI0ioAEJOoKzinzH6HFRe9w
 
   contact
 @flokisun https://www.linkedin.com/in/florenciovalladolidrodriguez/
